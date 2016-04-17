@@ -1,2 +1,3 @@
 # Learningrecord
 This is a repository for my learning path.
+There exits some learning tips during my learning time,such as java,c,github,ect...
