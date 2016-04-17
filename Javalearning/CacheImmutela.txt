@@ -1,0 +1,71 @@
+Java学习笔记------------##缓存模式&&判断对象是否相等&&单例模式
+/**
+*Description:This is a pragram for Cache test
+*<br>Date:2016.4.8
+*<br>Name:CachoImmutaleTest
+@author :Strawberrylin
+*@version 
+*/
+class CachoImmutale{
+    private static int MAX_SIZE = 10;
+    //use array to store instance
+    private static CachoImmutale[] cacho=new CachoImmutale[MAX_SIZE];
+    //use array to record the position of te instance in the Cacho
+    private static int pos =0;
+    private final String name;
+    private CachoImmutale(String name){
+        this.name =name;
+    }
+    public String getName(){
+        return name;
+    }
+    //unable to new a instance for because private
+    public static CachoImmutale valueOf(String name){
+        //look all have been cache
+        for(int i=0;i<MAX_SIZE;i++){
+            //if there have been same instance ,return the instance
+            if(cacho[i]!=null&&cacho[i].getName().equals(name)){
+                return cacho[i];
+            }
+        }
+        //if the cachoimmutale is full
+        if(pos == MAX_SIZE){
+            cacho[0] = new CachoImmutale(name);
+            pos = 1;
+        }
+        else{
+            cacho[pos++] = new CachoImmutale(name);
+        }
+        return cacho[pos-1];
+    } 
+	//judge if there are two same instance overrite equals 
+    public boolean equals(Object obj){
+        if(this == obj){
+            return true;
+        } 
+        if(obj != null &&obj.getClass() == CachoImmutale.class){
+            CachoImmutale ci =(CachoImmutale)obj;
+            return name.equals(ci.getName());
+        }
+        return false;
+    }
+//overrite hashCode
+    public int hashCode(){
+        return name.hashCode();
+    }
+}
+public class CachoImmutaleTest{
+     public static void main(String[] args){
+         CachoImmutale c1 = CachoImmutale.valueOf("Hello");
+         CachoImmutale c2 = CachoImmutale.valueOf("hello");
+         System.out.println(c1 == c2);
+     }
+ }
+首先建立一个数组缓存实例， 定义一个pos值代表当前位置
+私有化构造器，不能通过new来创造实例，只能通过我给的方式创造实例，即给出名字，我来创造实例
+如果已经有一个相同实例，就不再创造实例，如果缓存满了，就覆盖第一个
+要重写equals函数和hashCode函数
+
+其中有单例模式的意思
+
+----------------------------------------------------?2016?年?4?月?17?日, ?星期日
