@@ -6,11 +6,15 @@
 用来修饰抽象类和抽象方法，有抽象方法的类一定是抽象类，但抽象类不一定有抽象方法。
 抽象类不能被实例化，无法通过new来调用构造器来创建一个实例。
 抽象类的构造器主要被子类调用。
+
 以下三种情况要定义抽象方法：
+
 	1、类内部有抽象方法
 	2、继承一个抽象父类，但没有实现父类的所有方法
 	3、实现了一个接口，但没有实现所有的抽象方法
+	
 抽象类中定义了方法，但没有方法体，由继承的子类实现，这样细节是在子类中，父类并不知道。
+
 ## Interface
 依靠抽象类实现。是抽象出来的模板，定义了某一批类所需哟遵守的规范。
 接口的特点在于将实现和规范分离，让系统的各个组件向接口组合。接口并不关心子类要实现什么，怎么实现。
@@ -19,8 +23,11 @@
 接口里的方法被publi abstract 修饰，还可以有默认方法，dafault.
 
 ------------------------------------------------------------------------------------------------------
+
 ### *Demo*
+
 #### 接口定义
+
 ```java 
 package cn.strawberry;
 /**
@@ -46,10 +53,12 @@ public interface Output{
     }
 }
 ```
+
 #### 接口调用
 
 在另外一个包中调用接口
-```
+
+```java
 package cn.lin;
 
 import cn.strawberry.Output;
@@ -63,17 +72,20 @@ public class Test {
         System.out.println(cn.strawberry.Output.staticTest());
     }
 }
-
 ```
+
 运行效果截图：
+
 ![运行效果](https://github.com/strawberrylin/Learningrecord.git/Javalearning/photo/interfacetest1.PNG)
 
 ---------------------------------------------------------------------------------------------------
+
 #### 接口实现
 
-一个子类可以继承多个父类，用逗号隔开，作为参数
+一个子类可以继承多个父类，用逗号隔开，作为参数  
 子类要实现父类的所有抽象方法，除非她也是抽象类
-```
+
+```java
 package cn.implementtest;
 import cn.strawberry.Output;
 /**
@@ -116,15 +128,17 @@ public class Printer implements Output, Product{
         o.test();
     }
 }
-
 ```
+
 运管效果截图：
+
 [运行效果](https://github.com/strawberrylin/Learningrecord.git/Javalearning/photo/interfacetest1.PNG)
 
+## Contact
 
-[github](https://github.com/strawberrylin)
-
-[blog](http://hustwind.cn)
+-   [github](https://github.com/strawberrylin)
+-   [blog](http://hustwind.cn)
 
 --------------------------------------------------------------------------------------------------
+
 > Written with [StackEdit](https://stackedit.io/).
