@@ -123,6 +123,7 @@ public class Printer implements Output, Product{
 
 
 [github](https://github.com/strawberrylin)
+
 [blog](http://hustwind.cn)
 
 --------------------------------------------------------------------------------------------------
