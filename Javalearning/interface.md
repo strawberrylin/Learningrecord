@@ -132,7 +132,7 @@ public class Printer implements Output, Product{
 
 运管效果截图：
 
-[运行效果](https://raw.githubusercontent.com/strawberrylin/Learningrecord/master/Javalearning/images/interfacetest2.PNG)
+![运行效果](https://raw.githubusercontent.com/strawberrylin/Learningrecord/master/Javalearning/images/interfacetest2.PNG)
 
 ## Contact
 
