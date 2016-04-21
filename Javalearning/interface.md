@@ -76,7 +76,7 @@ public class Test {
 
 运行效果截图：
 
-![运行效果](https://github.com/strawberrylin/Learningrecord.git/Javalearning/photo/interfacetest1.PNG)
+![运行效果](https://raw.githubusercontent.com/strawberrylin/Learningrecord/master/Javalearning/images/interfacetest1.PNG)
 
 ---------------------------------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ public class Printer implements Output, Product{
 
 运管效果截图：
 
-[运行效果](https://github.com/strawberrylin/Learningrecord.git/Javalearning/photo/interfacetest1.PNG)
+[运行效果](https://raw.githubusercontent.com/strawberrylin/Learningrecord/master/Javalearning/images/interfacetest1.PNG)
 
 ## Contact
 
